@@ -1,9 +1,9 @@
 package parseBookList;
 
-import main.BookStore;
 import booktypes.AudioBook;
 import booktypes.Book;
 import booktypes.EBook;
+import main.BookStore;
 
 import java.util.ArrayList;
 import java.util.List;

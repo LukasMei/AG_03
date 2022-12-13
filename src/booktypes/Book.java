@@ -1,6 +1,6 @@
 package booktypes;
 
-public class Book {
+public class Book implements Comparable<Book> {
     private String titel;
     private String typ;
     private double preis;
@@ -62,5 +62,22 @@ public class Book {
                 ", preis=" + preis +
                 ", auflage=" + auflage +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        final int i = this.getTitel().compareTo(o.getTitel());
+        if(i != 0){
+            return i;
+        }
+
+        final int j = Integer.compare(this.getAuflage(), o.getAuflage());
+        if ( j != 0){
+            return j;
+        }
+        else {
+            return 0;
+        }
+
     }
 }

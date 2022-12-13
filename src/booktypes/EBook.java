@@ -10,10 +10,12 @@ public class EBook extends Book {
     }
 
     public String getVersion() {
+
         return version;
     }
 
     public void setVersion(String version) {
+
         this.version = version;
     }
 }

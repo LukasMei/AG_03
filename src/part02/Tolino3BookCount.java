@@ -19,10 +19,11 @@ public class Tolino3BookCount {
 
         for(Book x : tolino3List){
             if(x instanceof EBook){
-                count += Integer.parseInt(((EBook) x).getVersion());
-
+                if(((EBook) x).getVersion().equals("3"))
+                    count++;
             }
-            System.out.println(count);
+
         }
+        System.out.println(count);
     }
 }

@@ -7,4 +7,12 @@ public class AudioBook extends Book{
         super(titel, typ, preis, auflage);
         this.modus = modus;
     }
+
+    public String getModus() {
+        return modus;
+    }
+
+    public void setModus(String modus) {
+        this.modus = modus;
+    }
 }

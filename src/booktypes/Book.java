@@ -1,4 +1,4 @@
-package BookTypes;
+package booktypes;
 
 public class Book {
     private String titel;
@@ -35,6 +35,7 @@ public class Book {
     }
 
     public double getPreis() {
+
         return preis;
     }
 
@@ -49,6 +50,7 @@ public class Book {
     }
 
     public void setAuflage(int auflage) {
+
         this.auflage = auflage;
     }
 

@@ -1,36 +1,39 @@
+package parseBookList;
 
-import BookTypes.AudioBook;
-import BookTypes.Book;
-import BookTypes.EBook;
+import main.BookStore;
+import booktypes.AudioBook;
+import booktypes.Book;
+import booktypes.EBook;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class createBook {
-    public static void main(String[] args) {
+public class CreateBook {
+    public static List<Book> getBookList() {
 
         BookStore bookStore = new BookStore();
 
         List<String> allBooks = bookStore.getSoldBooks();
 
-        List<Book> testList = new ArrayList<>();
+        List<Book> bookList = new ArrayList<>();
 
         for (String x:allBooks){
             String[] split = x.split(";");
             if (split[1].equals("Buch")){
                 Book book = new Book(split[0],split[1],Double.parseDouble(split[2]),Integer.parseInt(split[3]));
-                testList.add(book);
+                bookList.add(book);
             }
             if(split[1].equals("Ebuch")){
                 Book ebook = new EBook(split[0],split[1],Double.parseDouble(split[2]),Integer.parseInt(split[3]),split[4]);
-                testList.add(ebook);
+                bookList.add(ebook);
             }
             if(split[1].equals("Hoerbuch")){
                 Book audioBook = new AudioBook(split[0],split[1],Double.parseDouble(split[2]),Integer.parseInt(split[3]),split[4]);
+                bookList.add(audioBook);
             }
 
         }
-        System.out.println(testList);
+        return bookList;
 
     }
 

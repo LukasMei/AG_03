@@ -1,4 +1,4 @@
-package BookTypes;
+package booktypes;
 
 public class AudioBook extends Book{
     private String modus;

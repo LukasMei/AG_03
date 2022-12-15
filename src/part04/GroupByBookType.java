@@ -7,7 +7,9 @@ import main.BookStore;
 import parseBookList.CreateBook;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GroupByBookType {
 
@@ -41,6 +43,12 @@ public class GroupByBookType {
 
         List<Book> groupList = CreateBook.getBookList();
 
+        Set<Book> bookSet = new HashSet<>();
+        Set<EBook> ebookSet = new HashSet<>();
+        Set<AudioBook> audioBookSet = new HashSet<>();
+
+
+
 
 
 
@@ -49,8 +57,22 @@ public class GroupByBookType {
 
         for (Book x :groupList) {
             if (x instanceof EBook) {
-                System.out.println("Ebuch: " + x.getTitel() +" " + x.getAuflage());
+                ebookSet.add((EBook) x);
+            } else if (x instanceof AudioBook) {
+                audioBookSet.add((AudioBook) x );
+            } else{
+                bookSet.add(x);
             }
+        }
+
+        for(EBook x : ebookSet){
+            System.out.println("Ebuch : " + x.getTitel() + " " + x.getAuflage());
+        }
+        for(AudioBook x : audioBookSet){
+            System.out.println("AudioBook : " + x.getTitel() + " " + x.getAuflage());
+        }
+        for(Book x : bookSet){
+            System.out.println("Buch : " + x.getTitel() +  " " + x.getAuflage());
         }
 
 
